@@ -34,6 +34,8 @@ $("#emailinput").blur(function(){
     }
 })
 
+
+
 $("#numberinput").blur(function (){
     var text2=$(this).val()
     if (text2.length<10) {
@@ -64,6 +66,28 @@ $("#numberinput").blur(function (){
     }
 
     
+
+    
+})
+$('#numberinput').bind('keyup paste', function(){
+    this.value = this.value.replace(/[^0-9]/g, '');
+});
+
+
+$("#Comment").blur(function (){
+    var text=$(this).val()
+    if (text.length<4) {
+        $("#err4").show()
+        flag4=1;
+        if(flag4==1){
+            $("#submitbtn").prop("disabled", true);
+        }
+       
+    } else {
+        $("#err4").hide()
+        flag4=0;
+        $("#submitbtn").prop("disabled", false);
+    }
 })
 
     $(window).scroll(function() {

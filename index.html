@@ -25,6 +25,8 @@
 
   <nav class="navbar navbar-expand-sm navbar-dark">
     <a class="navbar-brand " href="#">Kudos!</a>
+
+
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -75,7 +77,9 @@
         <img src="images/main.jpg" alt=" Ameen" class="mr-3 mt-3 ml-3 mb-3 rounded-circle" style="width:100px;">
         <div class="media-body mr-3 mt-3 ml-3 mb-3">
           <h4> It's Me </h4>
-          <p class="justif">I'am Muhammed Ameen, An Flutter Engineer and a Programming Enthusiast.</p>
+          <p class="justif">I'am Muhammed Ameen, An Flutter Engineer and a Programming Enthusiast. <br>
+            I enjoy creating things that live on the internet.
+          </p>
         </div>
       </div>
     </div>
@@ -158,7 +162,7 @@
   <section id="contact">
     <div class="container">
       <h4 class="card-title text-center pb-4">Let's Talk </h4>
-      <form id="submit-form" method="POST" action="">
+      <form id="submit-form" method="POST" action="" class="">
         <div class="form-group">
 
           <label for="">Name:</label>
@@ -172,13 +176,20 @@
           <label style="display: none; color: red" for="emailinput" id="err2">Enter Valid Email ID</label>
           <br>
           <label for="numberinput">Phone Number:</label>
-          <input type="tel" class="form-control" id="numberinput" name="number" placeholder="x x x x x x x" required>
-       
+          <input type="number" class="form-control" id="numberinput" name="number"
+            placeholder="x x x x x x x" required>
+
           <label style="display: none; color: red" for="numberinput" id="err3">Enter Valid Phone Number</label>
           <br>
           <label for="comment">Comment:</label>
-          <textarea class="form-control" rows="3" name="message" placeholder="What's on Your Mind !!"></textarea>
+          <textarea class="form-control" rows="3" name="message" id="Comment" placeholder="What's on Your Mind !!"></textarea>
+          <label style="display: none; color: red" for="Comment" id="err4">Say Something !!</label>
+
         </div>
+        <label style="display: none; color: red" for="recived" id="recived">recived Successfully</label>
+
+
+
         <center>
           <button id="submitbtn" type="submit" value="submit" class="btn btn-primary">Submit</button>
         </center>
@@ -223,8 +234,9 @@
       data: $("#submit-form").serialize(),
       method: "post",
       success: function (response) {
-        alert("Form submitted successfully")
-        window.location.reload()
+        // window.location.reload()
+        $("#recived").show()
+
         //window.location.href="https://google.com"
       },
       error: function (err) {
@@ -233,6 +245,8 @@
       }
     })
   })
+
+  
 </script>
 
 
